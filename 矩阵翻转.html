@@ -8,7 +8,26 @@
 
 </body>
 <script>
-    let a = new Array(3).fill(7)
-    Array
+    let a = [[2, 1, 6], [3, 4, 7], [2, 5, 8]]
+    function flip (data) {
+        let l = data.length
+        /*
+        * 这样带来的问题是，修改[x][y]的一个值，里面所有的[n][y]的值都跟着变化
+        * let arr = new Array(data[0].length).fill(new Array(l))
+        * let arr = new Array(data[0].length).fill(new Array(l).fill(''))
+        * */
+        let arr = new Array(data[0].length).fill('')
+        arr = arr.map(() => {
+            return new Array(l)
+        })
+        for (let i = 0; i < l; i++) {
+            let dL = data[i].length
+            for (let j = 0; j < dL; j++) {
+                arr[j][i] = data[i][j]
+            }
+        }
+        return arr
+    }
+    console.log(flip(a))
 </script>
 </html>
