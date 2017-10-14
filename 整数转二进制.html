@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function transformation(n) {
+        let s = ''
+        while (n) {
+            s = n % 2 + s
+            n = Math.floor(n / 2)
+        }
+        return s
+    }
+    console.log(transformation(4))
+</script>
+</html>
