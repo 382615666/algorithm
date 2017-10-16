@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function test(a,b) {
+        if(a == 1 || b == 1) {
+            return 1
+        }
+        let max = a < b ? a : b
+        for(let i = 2;i <= max; i++){
+            if (a%i == 0 && b%i == 0) {
+                return i * test(a/i,b/i)
+            }
+        }
+        return 1
+    }
+    console.log(test(1111111,1234567))
+</script>
+</html>
