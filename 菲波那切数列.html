@@ -8,15 +8,25 @@
 
 </body>
 <script>
-    function fibonacci (n) {
+    /*function fibonacci (n) {
         let f1 = 0, f2 = 1
         while (n--) {
             console.log(`倒数第${n + 1}步：` + f1)
             f1 = f1 + f2
             f2 = f1 - f2
         }
+    }*/
+    function fibonacci (n) {
+        if (n == 0) {
+            return 0
+        }
+        if (n == 1) {
+            return 1
+        }
+        return arguments.callee(n - 1) + arguments.callee(n - 2)
     }
-    fibonacci(5)
+    console.log(fibonacci(5))
+
     /*
     * 两个变量交换值
     * */
