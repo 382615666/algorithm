@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function merge (leftArr, rightArr) {
+        let arr = []
+        while (leftArr.length > 0 && rightArr.length > 0) {
+            let l = leftArr[0]
+            let r = rightArr[0]
+
+            if (l < r) {
+                arr.push(l)
+                leftArr.shift()
+            } else {
+                arr.push(r)
+                rightArr.shift()
+            }
+        }
+        return [...arr, ...leftArr, ...rightArr]
+    }
+    function binarySort(arr) {
+        if (arr.length <= 1) {
+            return arr
+        }
+        let mid = Math.floor(arr.length / 2)
+        let leftArr = binarySort(arr.slice(0, mid))
+        let rightArr = binarySort(arr.slice(mid, arr.length))
+        return merge(leftArr, rightArr)
+    }
+    let data = [1,8,5,4,2]
+    console.log(binarySort(a))
+</script>
+</html>
