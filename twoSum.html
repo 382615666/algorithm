@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var twoSum = function(nums, target) {
+        let obj = {},l = nums.length
+        for (let i = 0; i < l; i++) {
+            let result = target - nums[i]
+            if (obj[nums[i]] != undefined) {
+                return [i,obj[nums[i]]]
+            }
+            obj[result] = i
+        }
+    };
+    console.log(twoSum([3,3],6))
+</script>
+</html>
