@@ -8,14 +8,14 @@
 
 </body>
 <script>
-    function test(a,b) {
+    function divisor(a,b) {
         if(a == 1 || b == 1) {
             return 1
         }
-        let max = a < b ? a : b
+        let max = Math.max(a,b)
         for(let i = 2;i <= max; i++){
             if (a%i == 0 && b%i == 0) {
-                return i * test(a/i,b/i)
+                return i * divisor(a/i,b/i)
             }
         }
         return 1
